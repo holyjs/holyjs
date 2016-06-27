@@ -93,3 +93,4 @@ Project starter for **Node.js** web applications.
 - [ ] Environment dotenv config files. (`.env.production` `.env.testing`, `.env`)
 - [ ] An example crud routes and controller.
 - [ ] Seperated passport strategies with **passport**/ folder.
+- [ ] CLI helper for secret key generate, listing routes, listing controllers etc.
