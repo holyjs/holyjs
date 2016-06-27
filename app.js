@@ -1,22 +1,24 @@
 /**
  * Module Dependencies
  */
-const express      = require('express');
-const compression  = require('compression');
-const session      = require('express-session');
-const bodyParser   = require('body-parser');
-const logger       = require('morgan');
-const errorHandler = require('errorhandler');
-const lusca        = require('lusca');
-const dotenv       = require('dotenv');
-const MongoStore   = require('connect-mongo')(session);
-const flash        = require('express-flash');
-const path         = require('path');
-const mongoose     = require('mongoose');
-const passport     = require('passport');
+const express          = require('express');
+const compression      = require('compression');
+const session          = require('express-session');
+const bodyParser       = require('body-parser');
+const logger           = require('morgan');
+const errorHandler     = require('errorhandler');
+const lusca            = require('lusca');
+const dotenv           = require('dotenv');
+const MongoStore       = require('connect-mongo')(session);
+const flash            = require('express-flash');
+const path             = require('path');
+const mongoose         = require('mongoose');
+const passport         = require('passport');
 const expressValidator = require('express-validator');
 const sass             = require('node-sass-middleware');
 const multer           = require('multer');
+const http             = require('http');
+const socketio         = require('socket.io');
 
 /**
  * Load environment variables such as api keys, passwords
@@ -141,10 +143,30 @@ app.get('/auth/instagram/callback', passport.authenticate('instagram', { failure
 app.use(errorHandler());
 
 /**
- * Start Express Server
+ * Server Initialize
  */
-app.listen(app.get('port'), () => {
+const server = http.Server(app);
+const io     = socketio(server);
+
+/**
+ * Start Express Server with Socket.io
+ */
+server.listen(app.get('port'), () => {
   console.log('Express server listening on port %d in %s mode', app.get('port'), app.get('env'));
+});
+
+/**
+ * Socket.io Events
+ */
+io.on('connection', (socket) => {
+  console.log("New Connection: ", socket.id);
+  socket.emit('hello', { id: socket.id });
+  socket.on('respond', (data) => {
+    console.log("Response From", socket.id, ":", data.message);
+  });
+  socket.on('disconnect', () => {
+    console.log('Socket', socket.id, 'disconnected!');
+  });
 });
 
 module.exports = app;

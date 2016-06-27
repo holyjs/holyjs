@@ -75,6 +75,7 @@ Project starter for **Node.js** web applications.
 | passport-oauth        | OAuth 1.0a and OAuth 2.0 strategies.                         |
 | request               | HTTP request library.                                        |
 | lodash                | Javascript utilities library.                                |
+| socket.io             | Real-Time Communication Engine.                              |
 
 ## Development Packages
 
@@ -85,7 +86,7 @@ Project starter for **Node.js** web applications.
 | chai                  | BDD/TDD assertion library. |
 
 ## Ideas - Todo
-- [ ] Adding `socket.io`
+- [X] Adding `socket.io`
 - [ ] Custom middleware support with **middlewares**/ folder.
 - [ ] Adding test scripts for user login and register.
 - [ ] Add `bower` support
