@@ -32,6 +32,7 @@ Project starter for **Node.js** web applications.
 | **controllers**/home.js       | Controller for home page                                       |
 | **controllers**/user.js       | Controller for user account management                         |
 | **models**/User.js            | User model                                                     |
+| **middlewares**/              | Middlewares folder                                             |
 | **public**/                   | Static files (fonts, css, js, images)                          |
 | **views**/                    | Template files                                                 |
 | **views**/layout.jade         | Main layout template                                           |
@@ -87,7 +88,7 @@ Project starter for **Node.js** web applications.
 
 ## Ideas - Todo
 - [X] Adding `socket.io`
-- [ ] Custom middleware support with **middlewares**/ folder.
+- [X] Custom middleware support with **middlewares**/ folder.
 - [ ] Adding test scripts for user login and register.
 - [ ] Add `bower` support
 - [ ] Add **sass** and **public js assets** support with minify.

@@ -37,6 +37,12 @@ const userController = require('./controllers/user');
 const passportConfig = require('./config/passport');
 
 /**
+ * Middlewares
+ */
+const isAuthenticated = require('./middlewares/isAuthenticated');
+const isAuthorized    = require('./middlewares/isAuthorized');
+
+/**
  * Express Server
  */
 const app = express();
@@ -100,18 +106,18 @@ app.use(express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }))
 app.get('/', homeController.index);
 app.get('/login', userController.login);
 app.post('/login', userController.doLogin);
-app.get('/logout', passportConfig.isAuthenticated, userController.logout);
+app.get('/logout', isAuthenticated, userController.logout);
 app.get('/forgot', userController.forgot);
 app.post('/forgot', userController.doForgot);
 app.get('/reset/:token', userController.reset);
 app.post('/reset/:token', userController.doReset);
 app.get('/register', userController.register);
 app.post('/register', userController.doRegister);
-app.get('/account', passportConfig.isAuthenticated, userController.account);
-app.post('/account/profile', passportConfig.isAuthenticated, userController.updateProfile);
-app.post('/account/password', passportConfig.isAuthenticated, userController.updatePassword);
-app.post('/account/delete', passportConfig.isAuthenticated, userController.deleteAccount);
-app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userController.oauthUnlink);
+app.get('/account', isAuthenticated, userController.account);
+app.post('/account/profile', isAuthenticated, userController.updateProfile);
+app.post('/account/password', isAuthenticated, userController.updatePassword);
+app.post('/account/delete', isAuthenticated, userController.deleteAccount);
+app.get('/account/unlink/:provider', isAuthenticated, userController.oauthUnlink);
 
 /**
  * OAuth Authentication Routes
