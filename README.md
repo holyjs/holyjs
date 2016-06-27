@@ -83,3 +83,13 @@ Project starter for **Node.js** web applications.
 | mocha                 | Test framework.            |
 | supertest             | HTTP assertion library.    |
 | chai                  | BDD/TDD assertion library. |
+
+## Ideas - Todo
+- [ ] Adding `socket.io`
+- [ ] Custom middleware support with **middlewares**/ folder.
+- [ ] Adding test scripts for user login and register.
+- [ ] Add `bower` support
+- [ ] Add **sass** and **public js assets** support with minify.
+- [ ] Environment dotenv config files. (`.env.production` `.env.testing`, `.env`)
+- [ ] An example crud routes and controller.
+- [ ] Seperated passport strategies with **passport**/ folder.
