@@ -28,11 +28,13 @@ Project starter for **Node.js** web applications.
 
 | Name                          | Description |
 | ----------------------------- | -------------------------------------------------------------- |
-| **config**/passport.js        | Passport Strategies, Login Middleware                          |
+| **config**/passport.js        | Passport Strategies and Serialize/Deserialize User             |
 | **controllers**/home.js       | Controller for home page                                       |
 | **controllers**/user.js       | Controller for user account management                         |
 | **models**/User.js            | User model                                                     |
 | **middlewares**/              | Middlewares folder                                             |
+| **strategies**/               | Passport's Strategies Folder                                   |
+| **strategies**/local.js       | Passport's Local Strategy                                      |
 | **public**/                   | Static files (fonts, css, js, images)                          |
 | **views**/                    | Template files                                                 |
 | **views**/layout.jade         | Main layout template                                           |
@@ -92,7 +94,7 @@ Project starter for **Node.js** web applications.
 - [ ] Adding test scripts for user login and register.
 - [ ] Add `bower` support
 - [ ] Add **sass** and **public js assets** support with minify.
-- [ ] Environment dotenv config files. (`.env.production` `.env.testing`, `.env`)
+- [ ] ~~Environment dotenv config files. (`.env.production` `.env.testing`, `.env`)~~
 - [ ] An example crud routes and controller.
-- [ ] Seperated passport strategies with **passport**/ folder.
+- [X] Separated passport strategies with **strategies**/ folder.
 - [ ] CLI helper for secret key generate, listing routes, listing controllers etc.
