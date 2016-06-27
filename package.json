@@ -35,6 +35,7 @@
     "passport-instagram": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
+    "passport-openid": "^0.4.0",
     "passport-twitter": "^1.0.4",
     "request": "^2.72.0",
     "validator": "^5.2.0"
