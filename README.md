@@ -19,6 +19,7 @@ Project starter for **Node.js** web applications.
   - Linking multiple social accounts to one account
   - Delete Account
 - **CSRF** Protection
+- **Yeoman** Generator `generator-holyjs`
 
 ## Prerequisites
 - MongoDB
@@ -88,6 +89,21 @@ Project starter for **Node.js** web applications.
 | supertest             | HTTP assertion library.    |
 | chai                  | BDD/TDD assertion library. |
 
+## Install with Yeoman Generator
+
+First install `yeoman` and `generator-holyjs`
+
+```bash
+npm install -g yo
+npm install -g generator-holyjs
+```
+
+Then generate your new project:
+
+```bash
+yo holyjs
+```
+
 ## Ideas - Todo
 - [X] Adding `socket.io`
 - [X] Custom middleware support with **middlewares**/ folder.
@@ -98,3 +114,4 @@ Project starter for **Node.js** web applications.
 - [ ] An example crud routes and controller.
 - [X] Separated passport strategies with **strategies**/ folder.
 - [ ] CLI helper for secret key generate, listing routes, listing controllers etc.
+- [X] Yeoman generator for HolyJS project
