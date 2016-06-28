@@ -1,10 +1,11 @@
 {
   "name": "holyjs",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/holyjs/holyjs.git"
   },
+  "author": "Eray AYDIN <erayaydin2016@gmail.com>",
   "scripts": {
     "start": "node app.js",
     "test": "mocha --reporter spec --timeout 5000"
