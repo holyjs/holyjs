@@ -115,3 +115,4 @@ yo holyjs
 - [X] Separated passport strategies with **strategies**/ folder.
 - [ ] CLI helper for secret key generate, listing routes, listing controllers etc.
 - [X] Yeoman generator for HolyJS project
+- [ ] Reformat code as standart of ES (for Eslint errors, such as `const`)
