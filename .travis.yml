@@ -4,3 +4,4 @@ node_js:
   - "stable"
 script:
 - cp .env.test .env
+- npm test
