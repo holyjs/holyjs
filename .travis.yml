@@ -2,3 +2,5 @@ services: mongodb
 language: node_js
 node_js:
   - "stable"
+script:
+- cp .env.test .env
