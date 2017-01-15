@@ -1,12 +1,5 @@
-const passport          = require('passport');
-const LocalStrategy     = require('../strategies/local.js');
-const FacebookStrategy  = require('../strategies/facebook.js');
-const GithubStrategy    = require('../strategies/github.js');
-const TwitterStrategy   = require('../strategies/twitter.js');
-const GoogleStrategy    = require('../strategies/google.js');
-const InstagramStrategy = require('../strategies/instagram.js');
-
-const User              = require('../models/User');
+const passport = require('passport');
+const User     = require('../models/User');
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -18,9 +11,19 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-passport.use(LocalStrategy);
-passport.use(FacebookStrategy);
-passport.use(GithubStrategy);
-passport.use(TwitterStrategy);
-passport.use(GoogleStrategy);
-passport.use(InstagramStrategy);
+passport.use(require('../strategies/local.js'));
+
+if(process.env.FACEBOOK_ID && process.env.FACEBOOK_SECRET)
+  passport.use(require('../strategies/facebook.js'));
+
+if(process.env.GITHUB_ID && process.env.GITHUB_SECRET)
+    passport.use(require('../strategies/github.js'));
+
+if(process.env.TWITTER_KEY && process.env.TWITTER_SECRET)
+    passport.use(require('../strategies/twitter.js'));
+
+if(process.env.GOOGLE_ID && process.env.GOOGLE_SECRET)
+    passport.use(require('../strategies/google.js'));
+
+if(process.env.INSTAGRAM_ID && process.env.INSTAGRAM_SECRET)
+    passport.use(require('../strategies/instagram.js'));

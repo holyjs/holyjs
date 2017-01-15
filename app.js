@@ -34,7 +34,7 @@ const userController = require('./controllers/user');
 /**
  * API keys and Password Configuration
  */
-const passportConfig = require('./config/passport');
+require('./config/passport');
 
 /**
  * Middlewares

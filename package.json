@@ -28,6 +28,7 @@
     "mongoose": "^4.4.17",
     "morgan": "^1.7.0",
     "multer": "^1.1.0",
+    "node-sass-middleware": "^0.10.1",
     "nodemailer": "^2.4.1",
     "passport": "0.3.2",
     "passport-facebook": "^2.1.0",
