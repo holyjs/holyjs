@@ -50,6 +50,10 @@ const app = express();
 /**
  * Connect to MongoDB
  */
+2
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useNewUrlParser', true);
 mongoose.connect(process.env.MONGODB_URI || process.env.MONGOLAB_URI);
 mongoose.connection.on('error', () => {
   console.log('MongoDB connection error. Please make sure that MongoDB is running.');
