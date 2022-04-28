@@ -12,7 +12,7 @@
     "postinstall": "opencollective postinstall"
   },
   "dependencies": {
-    "async": "^2.0.0-rc.4",
+    "async": "^2.6.4",
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.15.1",
     "compression": "^1.6.2",
